@@ -11,7 +11,8 @@
         android:theme="@style/Theme.CHI_Internship_Android_Junior_Myslyva">
         <activity
             android:name=".Level2Activity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

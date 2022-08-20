@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">CHI_Internship_Android_Junior_Myslyva</string>
+    <string name="app_name">Level 2</string>
+    <string name="toolbar1">User</string>
+    <string name="toolbar2">Is a student</string>
 </resources>
