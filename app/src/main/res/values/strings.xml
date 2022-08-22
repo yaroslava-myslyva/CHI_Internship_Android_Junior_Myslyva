@@ -2,4 +2,7 @@
     <string name="app_name">Level 2</string>
     <string name="toolbar1">User</string>
     <string name="toolbar2">Is a student</string>
+    <string name="button_back">Back</string>
+    <string name="fragment_users_list_label">Users</string>
+    <string name="fragment_user_details_label">Details</string>
 </resources>

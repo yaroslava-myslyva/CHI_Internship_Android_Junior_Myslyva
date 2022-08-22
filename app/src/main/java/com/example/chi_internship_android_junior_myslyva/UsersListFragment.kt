@@ -6,14 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chi_internship_android_junior_myslyva.databinding.FragmentUsersListBinding
 
-class UsersListFragment : Fragment(), AdapterView.OnItemClickListener {
+class UsersListFragment : Fragment() {
     private lateinit var binding: FragmentUsersListBinding
-    private lateinit var myadapter: MyAdapter
+    private lateinit var myadapter: UserAdapter
 
     private val usersList: List<User> = mutableListOf(
         User("Vasyl", 57),
@@ -47,7 +46,7 @@ class UsersListFragment : Fragment(), AdapterView.OnItemClickListener {
 
     private fun setupRecyclerView() {
         binding.lvUsersList.run {
-            myadapter = MyAdapter(this@UsersListFragment, context = context, this@UsersListFragment, usersList)
+            myadapter = UserAdapter(this@UsersListFragment, usersList)
             adapter = myadapter
             layoutManager = LinearLayoutManager(context)
         }
@@ -69,9 +68,5 @@ class UsersListFragment : Fragment(), AdapterView.OnItemClickListener {
         super.onPause()
         usersList.forEach { editor.putBoolean("${it.name}${it.age}", it.isStudent) }
         editor.commit()
-    }
-
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//        val item: User = myadapter.getItem(position)
     }
 }
