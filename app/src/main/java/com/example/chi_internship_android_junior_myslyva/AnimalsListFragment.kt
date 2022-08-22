@@ -2,18 +2,13 @@ package com.example.chi_internship_android_junior_myslyva
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chi_internship_android_junior_myslyva.databinding.AnimalsListFragmentBinding
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import retrofit2.Response
+import androidx.recyclerview.widget.DividerItemDecoration
 
 class AnimalsListFragment : Fragment() {
     private lateinit var binding: AnimalsListFragmentBinding
@@ -39,7 +34,12 @@ class AnimalsListFragment : Fragment() {
         binding.rvUsersList.run {
             adapter = AnimalAdapter(animalsList)
             layoutManager = LinearLayoutManager(context)
-            Toast.makeText(context, animalsList.size.toString(), Toast.LENGTH_SHORT).show()
+            addItemDecoration(
+                DividerItemDecoration(
+                    context,
+                    LinearLayoutManager(context).orientation
+                )
+            )
         }
     }
 }

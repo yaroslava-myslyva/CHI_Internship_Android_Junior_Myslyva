@@ -2,17 +2,17 @@ package com.example.chi_internship_android_junior_myslyva
 
 data class Animal(
     val name: String,
-    val latinName: String,
-    val animalType: String,
-    val animalTime: String,
-    val lengthMin: Int,
-    val lengthMax: Int,
-    val weightMin: Int,
-    val weightMax: Int,
+    val latin_name: String,
+    val animal_type: String,
+    val active_time: String,
+    val length_min: Float,
+    val length_max: Float,
+    val weight_min: Float,
+    val weight_max: Float,
     val lifespan: Int,
     val habitat: String,
     val diet: String,
-    val geoRange: String,
-    val imageLink: String,
+    val geo_range: String,
+    val image_link: String,
     val id: Int
 )

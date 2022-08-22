@@ -19,23 +19,26 @@ class AnimalAdapter(
                 val name = findViewById<TextView>(R.id.name)
                 name.text = animal.name
 
+                val latinName = findViewById<TextView>(R.id.latin_name)
+                latinName.text = animal.latin_name
 
                 val animalPhoto = findViewById<ImageView>(R.id.icon)
                 Glide.with(this)
-                    .load(animal.imageLink)
-                    .circleCrop()
+                    .load(animal.image_link)
                     .transition(DrawableTransitionOptions.withCrossFade(3000))
                     .into(animalPhoto)
 
+                val description =
+                    "This animal is a representative of the ${animal.animal_type} class. " +
+                            "The peak of activity of this creature came in the ${animal.active_time}" +
+                            " The dimensions of one person are from ${animal.length_min} to ${animal.length_max} meters, " +
+                            "and the weight is from ${animal.weight_min} to ${animal.weight_max} kilograms." +
+                            "For habitat prefers ${animal.habitat}, mostly in ${animal.geo_range}. " +
+                            "These places are rich in ${animal.diet}, which is the animal's main diet." +
+                            " Average life expectancy - ${animal.lifespan} years "
 
-//                val userNameAge = findViewById<TextView>(R.id.users_name_age)
-//                val userIsStudent = findViewById<CheckBox>(R.id.is_student)
-//                userNameAge.text = "${user.name}, ${user.age} years old"
-//                userIsStudent.isChecked = user.isStudent
-//                userIsStudent.setOnCheckedChangeListener { _, isChecked ->
-//                    user.isStudent = isChecked
-//                }
-
+                val desciptionView = findViewById<TextView>(R.id.description)
+                desciptionView.text = description
             }
         }
     }
